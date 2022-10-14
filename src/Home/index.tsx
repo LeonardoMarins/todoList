@@ -19,10 +19,7 @@ export function Home() {
       setParticipant((prevState) => prevState.filter(participant => participant !== name))
       setCount(count - 1)
     }
-    function clique() {
-       
-       
-    }
+    
     return (
         <View>
             <View style={styles.corFundo}>

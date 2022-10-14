@@ -6,30 +6,19 @@ export const styles = StyleSheet.create({
         marginTop: 40,
         alignItems: "center",
         flexDirection: 'row',
-        marginEnd: 60,
-        padding: 20,
+        padding: 10,
         backgroundColor: "#333333",
         borderRadius: 10,
-        marginLeft: 20
 
     },
     text: {
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        overflow: "hidden",
+        maxWidth: 250
     },
     button: {
         backgroundColor: '#262626',
-        position: "absolute",
-        left: 290
+        
 
-    },
-    check: {
-        width: 20,
-        height: 20,
-        borderWidth: 1,
-        justifyContent: "center",
-        marginRight: 10,
-        alignItems: "center",
-        color: "blue",
-        borderRadius: 50
     }
 }) 
