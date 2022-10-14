@@ -26,7 +26,6 @@ export function Participant({ name,onRemove }: Props) {
     return (
         <View style={styles.container}>
             <CheckBox
-            
             checked={checked}
             onPress={() => setChecked(!checked)}
             checkedColor="blue"
@@ -35,7 +34,7 @@ export function Participant({ name,onRemove }: Props) {
                 {name}
             </Text>
             
-            <TouchableOpacity onPress={onRemove}>
+            <TouchableOpacity style={styles.button} onPress={onRemove}>
                 <Image source={require('../../assets/trash.png')} />
             </TouchableOpacity>
 

@@ -17,8 +17,7 @@ export const styles = StyleSheet.create({
         maxWidth: 250
     },
     button: {
-        backgroundColor: '#262626',
-        
-
+        position: "absolute",
+        right: 5
     }
 }) 
