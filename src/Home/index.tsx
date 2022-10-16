@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Text, View, Image, TextInput, TouchableOpacity, FlatList } from "react-native";  
-import { Participant } from "../Participant";
+import {  Task } from "../Task";
 import { styles } from './styles'
 
 export function Home() {
@@ -23,7 +23,6 @@ export function Home() {
     return (
         <View>
             <View style={styles.corFundo}>
-                <Text></Text>
                 <Image
                     source={require('../../assets/Logo.png')}
                     style={styles.imagem}
@@ -46,14 +45,13 @@ export function Home() {
                 <Text style={styles.corAdicionados}>{`Criados ${count}`}</Text>
                 <FlatList
                     data={participant}
-                    renderItem={({ item }) => (
-                        <Participant
+                    renderItem={({ item }) =>(
+                        <Task
                             name={item}
                             onRemove={() => excluirTarefa(`${item}`)}
                         />
+                        
                     )}
-
-
                 />
             </View>
         </View>

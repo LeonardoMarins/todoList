@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     },
     corAdicionados: {
         color: "#4EA8DE",
-        padding: 10
+        padding: 10,
     }
 })
 

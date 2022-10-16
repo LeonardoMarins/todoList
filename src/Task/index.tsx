@@ -1,9 +1,7 @@
 import { TouchableOpacity, View, Text, Image } from "react-native";
 import { styles } from "./styles"
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import { CheckBox } from "react-native-elements";
-
-
 
 type Props = {
     name: String
@@ -11,34 +9,42 @@ type Props = {
     
 }
 
-export function Participant({ name,onRemove }: Props) {
+
+export function Task({ name,onRemove }: Props) {
 
     const [checked,setChecked] = useState(false)
-    const [count,setCount] = useState(0)
+    const [count1,setCount1] = useState(0)
+
 
     function checkedes() {
-        if(checked == true)
-        setCount(count + 1)
-        console.log(count)
+        if(!checked) {
+        
+        setCount1(count1 + 1)
+        }else {
+            setCount1(count1 - 1)
+        }
     }
 
-
     return (
+        <>
         <View style={styles.container}>
             <CheckBox
             checked={checked}
             onPress={() => setChecked(!checked)}
+            onPressIn={checkedes}
             checkedColor="blue"
             />
-            <Text style={styles.text}>
+            <View style={styles.text}>
+            <Text style={!checked ? {color:"#FFFFFF"}: {textDecorationLine: "line-through"}}>
                 {name}
             </Text>
-            
+            </View>
             <TouchableOpacity style={styles.button} onPress={onRemove}>
                 <Image source={require('../../assets/trash.png')} />
             </TouchableOpacity>
 
 
         </View>
+        </>
     );
 }
